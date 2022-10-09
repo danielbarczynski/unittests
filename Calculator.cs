@@ -1,8 +1,4 @@
-﻿var calculator = new Calculator();
-var result = calculator.Add(5, 5);
-Console.WriteLine(result);
-
-class Calculator
+﻿class Calculator
 {
     public int Add(int x, int y)
     {
