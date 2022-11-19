@@ -9,5 +9,12 @@
     {
         return x * y;
     }
+
+    public bool IsPositive(int x, int y)
+    {
+        if (x * y < 0)
+            return false;
+            
+        return true;
+    }
 }
-// some changes
