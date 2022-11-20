@@ -56,4 +56,17 @@ public class BMITests
         //second way
         // Assert.Throws<ArgumentException>(() => result());
     }
+
+    [Test]
+    [TestCase(181.5, 70, BMI.BMIClassification.Normal)]
+    [TestCase(181.5, 80, BMI.BMIClassification.Normal)]
+    [TestCase(181.5, 90, BMI.BMIClassification.Overweight)]
+    public void MultipleAssertions_ForBMIValueAndClassifications(double height, double weight, BMI.BMIClassification bmiClassification)
+    {
+        var bmi = new BMI();
+        var bmiResult = bmi.CalculateBMI(height, weight);
+        var classificationResult = bmi.DetermineBMI(bmiResult);
+        Assert.AreEqual(classificationResult, bmiClassification);
+        Assert.GreaterOrEqual(bmiResult, 20.0);
+    }
 }
