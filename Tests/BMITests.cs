@@ -37,4 +37,23 @@ public class BMITests
         var result = determineBMI.DetermineBMI(num);
         Assert.AreEqual(result, bmiClassification); 
     }
+    [Test]
+    [TestCase(0, 100)]
+    [TestCase(100, 0)]
+    [TestCase(-10, 100)]
+    [TestCase(-10, 100)]
+    [TestCase(10, -100)]
+    [TestCase(0, 0)]
+    [TestCase(-10, -10)]
+    public void Assert_AreParametersValid_ReturnsException(double height, double weight)
+    {
+        var bmiCalculator = new BMI();
+        Action result = () => bmiCalculator.CalculateBMI(height, weight);
+        
+        //one way
+        Assert.Throws<ArgumentException>(() => bmiCalculator.CalculateBMI(height, weight)); // must be delegate
+
+        //second way
+        // Assert.Throws<ArgumentException>(() => result());
+    }
 }

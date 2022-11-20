@@ -13,6 +13,9 @@ public class BMI
     }
     public double CalculateBMI(double height, double weight)
     {
+        if (height <= 0 || weight <= 0)
+            throw new ArgumentException("Invalid input");
+        
         return Math.Round(weight / (height / 100 * height / 100), 2);
     }
 
