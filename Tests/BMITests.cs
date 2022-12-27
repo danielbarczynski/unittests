@@ -15,6 +15,7 @@ public class BMITests
         // assert
         Assert.AreEqual(result, 21.37);
     }
+
     // one way (bad approach)
     [Test]
     public void Determine_BMI()
@@ -37,6 +38,7 @@ public class BMITests
         var result = determineBMI.DetermineBMI(num);
         Assert.AreEqual(result, bmiClassification); 
     }
+    
     [Test]
     [TestCase(0, 100)]
     [TestCase(100, 0)]
@@ -51,10 +53,10 @@ public class BMITests
         Action result = () => bmiCalculator.CalculateBMI(height, weight);
         
         //one way
-        Assert.Throws<ArgumentException>(() => bmiCalculator.CalculateBMI(height, weight)); // must be delegate
+        // Assert.Throws<ArgumentException>(() => bmiCalculator.CalculateBMI(height, weight)); // must be delegate
 
         //second way
-        // Assert.Throws<ArgumentException>(() => result());
+        Assert.Throws<ArgumentException>(() => result());
     }
 
     [Test]
@@ -66,6 +68,7 @@ public class BMITests
         var bmi = new BMI();
         var bmiResult = bmi.CalculateBMI(height, weight);
         var classificationResult = bmi.DetermineBMI(bmiResult);
+
         Assert.AreEqual(classificationResult, bmiClassification);
         Assert.GreaterOrEqual(bmiResult, 20.0);
     }
