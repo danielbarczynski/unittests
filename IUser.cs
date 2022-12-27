@@ -1,4 +1,4 @@
 public interface IUser 
 {
-    bool Login(string username, string password);
+    bool IsAuthenticated(string username, string password);
 }

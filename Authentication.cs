@@ -6,5 +6,5 @@ public class Authentication
         _user = user;
     }
 
-    public bool LoginUser(string username, string password) => _user.Login(username, password); 
+    public bool LoginUser(string username, string password) => _user.IsAuthenticated(username, password); 
 }
