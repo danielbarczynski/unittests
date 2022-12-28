@@ -4,6 +4,7 @@ using FluentAssertions;
 
 public class AuthenticationTests
 {
+    // pretending that we are working on data from db, mocking allows us to do unit tests insted of integration tests that are not dependent on state of db. for example the connection fails or specific user is deleted and all unit test fails. mocking allow us to abstract that and run unit test independently working only with interfaces
     [Test]
     public void AssertMoq_ForUsernameAndPassword_ReturnsTrue()
     {
